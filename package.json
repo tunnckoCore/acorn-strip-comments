@@ -1,6 +1,6 @@
 {
   "name": "acorn-strip-comments",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Strip code comments from given input string, using acorn javascript parser",
   "repository": "tunnckoCore/acorn-strip-comments",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",

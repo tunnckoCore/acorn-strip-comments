@@ -1,6 +1,6 @@
-# acorn-strip-comments [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
+# [acorn-strip-comments][author-www-url] [![npmjs.com][npmjs-img]][npmjs-url] [![The MIT License][license-img]][license-url] 
 
-> Strip code comments from given input string, using acorn javascript parser
+> Strip code comments from a string, using `acorn` javascript parser.
 
 [![code climate][codeclimate-img]][codeclimate-url] [![standard code style][standard-img]][standard-url] [![travis build status][travis-img]][travis-url] [![coverage status][coveralls-img]][coveralls-url] [![dependency status][david-img]][david-url]
 
@@ -8,7 +8,6 @@
 ## Install
 ```
 npm i acorn-strip-comments --save
-npm test
 ```
 
 
@@ -16,12 +15,11 @@ npm test
 > For more use-cases see the [tests](./test.js)
 
 ```js
-var acornStripComments = require('acorn-strip-comments')
+const acornStripComments = require('acorn-strip-comments')
 ```
 
 
 ## Contributing
-
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/acorn-strip-comments/issues/new).  
 But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines.
 
@@ -34,7 +32,7 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [npmjs-url]: https://www.npmjs.com/package/acorn-strip-comments
 [npmjs-img]: https://img.shields.io/npm/v/acorn-strip-comments.svg?label=acorn-strip-comments
 
-[license-url]: https://github.com/tunnckoCore/acorn-strip-comments/blob/master/LICENSE.md
+[license-url]: https://github.com/tunnckoCore/acorn-strip-comments/blob/master/LICENSE
 [license-img]: https://img.shields.io/badge/license-MIT-blue.svg
 
 
@@ -72,5 +70,5 @@ But before doing anything, please read the [CONTRIBUTING.md](./CONTRIBUTING.md) 
 [freenode-url]: http://webchat.freenode.net/?channels=charlike
 [freenode-img]: https://img.shields.io/badge/freenode-%23charlike-5654a4.svg
 
-[new-message-url]: https://github.com/tunnckoCore/messages
-[new-message-img]: https://img.shields.io/badge/send%20me-message-green.svg
+[new-message-url]: https://github.com/tunnckoCore/ama
+[new-message-img]: https://img.shields.io/badge/ask%20me-anything-green.svg

@@ -1,25 +1,32 @@
 {
   "name": "acorn-strip-comments",
-  "version": "0.1.0",
-  "description": "Strip code comments from given input string, using acorn javascript parser",
+  "version": "0.0.0",
+  "description": "Strip code comments from a string, using `acorn` javascript parser.",
   "repository": "tunnckoCore/acorn-strip-comments",
   "author": "Charlike Mike Reagent <@tunnckoCore> (http://www.tunnckocore.tk)",
+  "precommit.silent": true,
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "test": "standard && node test.js"
   },
   "dependencies": {
-    "acorn": "~2.0.1",
-    "extend-shallow": "~1.1.4"
+    "acorn-extract-comments": "git+https://github.com/tunnckoCore/acorn-extract-comments.git",
+    "extend-shallow": "^2.0.1"
   },
   "devDependencies": {
-    "assertit": "^0.1.0"
+    "assertit": "^0.1.0",
+    "pre-commit": "*"
   },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "acorn-strip-comments"
+  ],
   "standard": {
     "ignore": [
       "fixtures/**"
     ]
-  },
-  "keywords": []
+  }
 }

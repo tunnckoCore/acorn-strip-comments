@@ -68,8 +68,8 @@ exports = module.exports = function stripAllComments (input, opts) {
  * @api public
  */
 exports.line = function stripLineComments (input, opts) {
-  opts = extend({line: true, preserve: true}, opts)
-  return acornStripComments(input, opts)
+  var options = extend({line: true, preserve: true}, opts)
+  return acornStripComments(input, options)
 }
 
 /**

@@ -1,7 +1,8 @@
 languages:
   JavaScript: true
 exclude_paths:
-- "dist/**/*"
-- "dist/*.js"
-- "dist/**/*.js"
-- "dist/**.js"
+- "fixtures/**/*"
+- "fixtures/*.js"
+- "fixtures/**/*.js"
+- "fixtures/**.js"
+- "test.js"

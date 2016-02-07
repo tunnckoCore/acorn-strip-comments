@@ -18,6 +18,80 @@ npm i acorn-strip-comments --save
 const acornStripComments = require('acorn-strip-comments')
 ```
 
+### [acornStripComments](index.js#L42)
+> Strip all code comments, but not these that are marked as "ignored" like (`//!` and `/*!`).  
+> Pass `opts.preserve: false` to remove even them.
+
+**Params**
+
+* `<input>` **{String}**: string from which to get comments    
+* `[opts]` **{Object}**: optional options, passed to `acorn-extract-comments` and `acorn`  
+  - `ast` **{Boolean}**: if `true` the ast is added to the resulting array
+  - `line` **{Boolean}**: if `false` get only block comments, default `true`
+  - `block` **{Boolean}**: if `false` get line comments, default `true`
+  - `ignore` **{Function}**: check function, default check comment starts with `!`
+  - `preserve` **{Boolean}**: if `true` keep comments that are ignored (that pass the `opts.ignore` check)
+  - `locations` **{Boolean}**: if `true` result will include `acorn/esprima` format comment location object
+  - `ecmaVersion` **{Number}**: defaults to `6`, acorn parsing version
+* `returns` **{String}**: modified string  
+
+**Example**
+
+```js
+const fs = require('fs')
+const strip = require('acorn-strip-comments')
+
+const str = fs.readFileSync('./index.js', 'utf8')
+const output = strip(str, {})
+// => modified and cleaned string
+```
+
+### [.line](index.js#L70)
+> Remove only line comments.
+
+**Params**
+
+* `<input>` **{String}**: string from which to get comments    
+* `[opts]` **{Object}**: optional options, passed to `acorn-extract-comments` and `acorn`    
+* `returns` **{String}**: modified string  
+
+**Examples**
+
+```js
+const output = strip(str, {block: false})
+// => modified and cleaned string
+```
+
+or through method
+
+```js
+const output = strip.line(str)
+// => modified and cleaned string
+```
+
+### [.block](index.js#L98)
+> Remove only block comments.
+
+**Params**
+
+* `<input>` **{String}**: string from which to get comments    
+* `[opts]` **{Object}**: optional options, passed to `acorn-extract-comments` and `acorn`    
+* `returns` **{String}**: modified string  
+
+**Examples**
+
+```js
+const output = strip(str, {line: false})
+// => modified and cleaned string
+```
+
+or through method
+
+```js
+const output = strip.block(str)
+// => modified and cleaned string
+```
+
 
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/tunnckoCore/acorn-strip-comments/issues/new).  

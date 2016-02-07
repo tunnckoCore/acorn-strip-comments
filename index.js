@@ -22,20 +22,20 @@ var extend = require('extend-shallow')
  * const strip = require('acorn-strip-comments')
  *
  * const str = fs.readFileSync('./index.js', 'utf8')
- * const comments = strip(str, {})
- * // => ['array', 'of', 'all', 'code', 'comments']
+ * const output = strip(str, {})
+ * // => modified and cleaned string
  * ```
  *
  * @name  acornStripComments
  * @param  {String} `<input>` string from which to get comments
- * @param  {Object} `[opts]` optional options, passed to `acorn-extract-comments` and `acorn`
- * @property {Boolean} [opts] `ast` if `true` the ast is added to the resulting array
- * @property {Boolean} [opts] `line` if `false` get only block comments, default `true`
- * @property {Boolean} [opts] `block` if `false` get line comments, default `true`
- * @property {Function} [opts] `ignore` check function, default check comment starts with `!`
- * @property {Boolean} [opts] `preserve` if `true` keep comments that are ignored (that pass the `opts.ignore` check)
- * @property {Boolean} [opts] `locations` if `true` result will include `acorn` location object
- * @property {Number} [opts] `ecmaVersion` defaults to `6`, acorn parsing version
+ * @param  {Object} `opts` optional options, passed to `acorn-extract-comments` and `acorn`
+ *   @option {Boolean} [opts] `ast` if `true` the ast is added to the resulting array
+ *   @option {Boolean} [opts] `line` if `false` get only block comments, default `true`
+ *   @option {Boolean} [opts] `block` if `false` get line comments, default `true`
+ *   @option {Function} [opts] `ignore` check function, default check comment starts with `!`
+ *   @option {Boolean} [opts] `preserve` if `true` keep comments that are ignored (that pass the `opts.ignore` check)
+ *   @option {Boolean} [opts] `locations` if `true` result will include `acorn/esprima` format comment location object
+ *   @option {Number} [opts] `ecmaVersion` defaults to `6`, acorn parsing version
  * @return {String} modified string
  * @api public
  */
@@ -50,20 +50,20 @@ exports = module.exports = function stripAllComments (input, opts) {
  * **Example**
  *
  * ```js
- * const comments = strip(str, {block: false})
- * // => ['array', 'of', 'line', 'comments']
+ * const output = strip(str, {block: false})
+ * // => modified and cleaned string
  * ```
  *
  * **Example**
  *
  * ```js
- * const comments = strip.line(str)
- * // => ['all', 'line', 'comments']
+ * const output = strip.line(str)
+ * // => modified and cleaned string
  * ```
  *
  * @name  .line
  * @param  {String} `<input>` string from which to get comments
- * @param  {Object} `[opts]` optional options, passed to `acorn`
+ * @param  {Object} `[opts]` optional options, passed to `acorn-extract-comments` and `acorn`
  * @return {String} modified string
  * @api public
  */
@@ -78,20 +78,20 @@ exports.line = function stripLineComments (input, opts) {
  * **Example**
  *
  * ```js
- * const comments = strip(str, {line: false})
- * // => ['array', 'of', 'block', 'comments']
+ * const output = strip(str, {line: false})
+ * // => modified and cleaned string
  * ```
  *
  * **Example**
  *
  * ```js
- * const comments = strip.block(str)
- * // => ['array', 'of', 'block', 'comments']
+ * const output = strip.block(str)
+ * // => modified and cleaned string
  * ```
  *
  * @name  .block
  * @param  {String} `<input>` string from which to get comments
- * @param  {Object} `[opts]` optional options, passed to `acorn`
+ * @param  {Object} `[opts]` optional options, passed to `acorn-extract-comments` and `acorn`
  * @return {String} modified string
  * @api public
  */
